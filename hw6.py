@@ -103,4 +103,12 @@ rect = Rectangle(4,6)
 print(f"Triangle's area is {tria.area()} and the perimeter is {tria.perimeter()}.")
 
 
-#prints out the 15 most frequent from words.txt
+#prints out the 15 most frequent from text.txt
+
+
+import re
+from collections import Counter
+words = re.findall(r'\w+', open('text.txt').read().lower())
+hello = Counter(words).most_common(15)
+
+print(hello)
